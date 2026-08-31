@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ internship.title }} | Skillora{% endblock %}
+
+{% block content %}
+<div class="card p-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <p class="text-muted mb-1">Internship</p>
+            <h2 class="mb-0">{{ internship.title }}</h2>
+        </div>
+        <span class="score-pill">{{ internship.match }}% match</span>
+    </div>
+
+    <p class="text-muted h5">{{ internship.company }} · {{ internship.location }}</p>
+    <p>{{ internship.description }}</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h5>Requirements</h5>
+            <ul>
+                <li>Strong communication and teamwork</li>
+                <li>Project experience in relevant tools</li>
+                <li>Availability for full internship cycle</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h5>Missing skills</h5>
+            <ul>
+                {% for skill in internship.missing_skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{% url 'internships' %}" class="btn btn-secondary me-2">Back to list</a>
+        <button class="btn btn-primary">Apply now</button>
+    </div>
+</div>
+{% endblock %}

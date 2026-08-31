@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ scholarship.title }} | Skillora{% endblock %}
+
+{% block content %}
+<div class="card p-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <p class="text-muted mb-1">Scholarship</p>
+            <h2 class="mb-0">{{ scholarship.title }}</h2>
+        </div>
+        <span class="score-pill">{{ scholarship.eligibility }}% fit</span>
+    </div>
+
+    <p class="text-muted h5">{{ scholarship.provider }} · {{ scholarship.location }}</p>
+    <p>{{ scholarship.description }}</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h5>Eligibility</h5>
+            <ul>
+                <li>Academic performance and motivation</li>
+                <li>Relevant leadership or community contributions</li>
+                <li>Submission of supporting materials</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h5>Requirements</h5>
+            <ul>
+                {% for requirement in scholarship.requirements %}
+                <li>{{ requirement }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{% url 'scholarships' %}" class="btn btn-secondary me-2">Back to list</a>
+        <button class="btn btn-primary">Apply</button>
+    </div>
+</div>
+{% endblock %}
