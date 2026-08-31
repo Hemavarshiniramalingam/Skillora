@@ -1,0 +1,14 @@
+[project]
+name = "skillora-matching"
+version = "0.1.0"
+description = "Skillora matching engine"
+requires-python = ">=3.11"
+dependencies = [
+  "scikit-learn>=1.5.0",
+  "pypdf>=4.0.0",
+  "python-docx>=1.1.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
