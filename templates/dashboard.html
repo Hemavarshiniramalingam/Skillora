@@ -9,13 +9,13 @@
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <div>
                     <p class="text-muted mb-1">Student</p>
-                    <h3 class="mb-0">{{ student.name }}</h3>
+                    <h3 class="mb-0 text-white">{{ student.name }}</h3>
                 </div>
                 <span class="score-pill">{{ student.readiness_score }}% Ready</span>
             </div>
-            <p class="mb-2"><strong>{{ student.major }}</strong> · {{ student.year }}</p>
+            <p class="mb-2"><strong class="text-white">{{ student.major }}</strong> · {{ student.year }}</p>
             <p class="text-muted mb-0">{{ student.location }}</p>
-            <hr />
+            <hr class="border-secondary" />
             <div class="d-flex justify-content-between text-muted small">
                 <span>Profile completion</span>
                 <span>{{ student.profile_completion }}%</span>
@@ -24,7 +24,7 @@
                 <div class="progress-bar bg-primary" role="progressbar" style="width: {{ student.profile_completion }}%"></div>
             </div>
             <div class="mt-3">
-                <span class="badge bg-light text-dark">Resume</span>
+                <span class="badge bg-secondary">Resume</span>
                 <small class="text-muted d-block mt-2">{{ student.resume_status }}</small>
             </div>
         </div>
